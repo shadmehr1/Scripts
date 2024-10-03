@@ -48,15 +48,15 @@ def set_wallpaper(filepath):
     SPI_SETDESKWALLPAPER = 20
     ctypes.windll.user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0, filepath, 0)
 
-def clean_old_images(keep_latest = 5):
-    # this function keeps only 5 photos in the file, to keep it from getting too big
+def clean_old_images(KEEP_LATEST = 5):
+    # this function keeps only recent photos in the file, to keep it from getting too big
     
     # sort the wallpapers by age
     files = glob.glob(os.path.join(TARGET_FOLDER, "*.jpg"))
     files.sort(key = os.path.getmtime, reverse = True)
     
     # delete everything except the 5 newest
-    for file in files[keep_latest:]:
+    for file in files[KEEP_LATEST:]:
         os.remove(file)
 
 def get_screen_resolution():
