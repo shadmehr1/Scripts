@@ -2,8 +2,6 @@
 
 Automatically download a new architecture photo from Unsplash every day and set it as your Windows desktop wallpaper.
 
-![Sample Wallpaper](https://source.unsplash.com/random/800x200/?architecture)
-
 ## Table of Contents
 
 - [Features](#features)
@@ -11,7 +9,6 @@ Automatically download a new architecture photo from Unsplash every day and set 
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Configuration](#configuration)
-- [Obtaining an Unsplash Access Key](#obtaining-an-unsplash-access-key)
 - [Usage](#usage)
 - [Automate with Windows Task Scheduler](#automate-with-windows-task-scheduler)
 - [Notes](#notes)
@@ -19,7 +16,8 @@ Automatically download a new architecture photo from Unsplash every day and set 
 
 ## Features
 
-- Downloads a high-resolution architecture image from Unsplash.
+- Set a theme for your wallpapers.
+- Downloads a high-resolution wallpaper from Unsplash.
 - Sets the downloaded image as your desktop wallpaper.
 - Cleans up old images to save disk space.
 - Configurable to use different search queries.
@@ -41,10 +39,16 @@ Automatically download a new architecture photo from Unsplash every day and set 
 1. **Clone or Download the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/daily-architecture-wallpaper.git
+   git clone https://github.com/shadmehr1/Scripts.git
    ```
 
-2. **Install Required Python Packages**
+2. Navigate to the Daily Wallpaper Folder
+  
+  ```bash
+   cd Scripts/Daily\ Wallpaper
+   ```
+
+3. **Install Required Python Packages**
 
    Open Command Prompt and run:
 
@@ -59,50 +63,23 @@ Before running the script, you need to configure it with your own Unsplash Acces
 ### 1. Set Up Environment Variables
 
 - **Unsplash Access Key**: Set an environment variable `UNSPLASH_ACCESS_KEY` with your Unsplash Access Key.
-- **Optional**: If you prefer, you can modify the script to include your access key directly (not recommended), or read from a configuration file.
 
-### 2. Edit Script Variables (Optional)
+### 2. Edit Script Variables
 
 Open `download_wallpaper.py` in a text editor and adjust the following variables if needed:
 
 - **DOWNLOAD_FOLDER**: The folder where images will be saved.
   ```python
-  DOWNLOAD_FOLDER = r'C:\Users\YourUsername\Pictures\ArchitectureWallpapers'
+  TARGET_FOLDER = r'C:\Users\YourUsername\Pictures\ArchitectureWallpapers'
   ```
 - **QUERY**: The search term for the type of images you want.
   ```python
-  QUERY = 'architecture'
+  QUERY = 'Architecture'
   ```
 - **KEEP_LATEST**: The number of recent images to keep.
   ```python
   KEEP_LATEST = 5
   ```
-
-## Obtaining an Unsplash Access Key
-
-1. **Sign Up for an Unsplash Account**
-
-   - Visit the [Unsplash website](https://unsplash.com/join) and create a free account.
-
-2. **Apply for API Access**
-
-   - Go to the [Unsplash Developers](https://unsplash.com/developers) page.
-   - Click on **"Your Apps"** and then **"New Application"**.
-   - Fill out the application details:
-     - **Name**: e.g., "Personal Wallpaper Updater"
-     - **Description**: e.g., "A script to update my desktop wallpaper daily"
-     - **API Usage**: Describe your intended use.
-     - **Platform**: Select **"Other"**.
-   - Agree to the terms and submit the application.
-
-3. **Retrieve Your Access Key**
-
-   - After approval, you'll receive an **Access Key**.
-   - **Keep this key secure** and do not share it publicly.
-
-## Usage
-
-### Running the Script Manually
 
 1. **Open Command Prompt**
 
